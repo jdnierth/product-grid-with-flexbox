@@ -1,0 +1,206 @@
+//
+// Flexbox mixins
+// ----------------------------------------------
+
+// Flexbox display
+.display-flex() {
+  display: -webkit-flex;
+  display: -ms-flexbox; // IE10
+  display: flex;
+}
+
+.display-flex(inline) {
+  // 2012
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+.flex(@columns: initial) {
+  -webkit-flex: @columns;
+  -ms-flex: @columns;
+  flex: @columns;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+.flex-direction(@direction: row) {
+  -webkit-flex-direction: @direction;
+  -ms-flex-direction: @direction;
+  flex-direction: @direction;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+.flex-flow(@flow) {
+  -webkit-flex-flow: @flow;
+  -ms-flex-flow: @flow;
+  flex-flow: @flow;
+}
+
+.flex-wrap(@wrap) when (@wrap = nowrap) {
+  -ms-flex-wrap: none;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.flex-wrap(@wrap) when (default()) {
+  -ms-flex-wrap: @wrap;
+  -webkit-flex-wrap: @wrap;
+  flex-wrap: @wrap;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+.flex-order(@order: 0) {
+  -webkit-order: @order;
+  -ms-order: @order;
+  order: @order;
+}
+
+/**
+ * IE 10 flexbox MSDN doc: https://msdn.microsoft.com/en-us/library/hh673531(v=vs.85).aspx
+ * IE 11 flexbox MSDN doc + migration guide from IE 10 syntax: https://msdn.microsoft.com/en-us/library/dn265027%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396
+ */
+
+.flex-grow(@num: 1) {
+  -webkit-flex-grow: @num;
+  //-ms-flex-grow is not valid in ie10
+  -ms-flex-positive: @num;
+  flex-grow: @num;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number>
+.flex-shrink(@shrink: 1) {
+  -webkit-flex-shrink: @shrink;
+  //-ms-flex-shrink is not valid in ie10
+  -ms-flex-negative: @shrink;
+  flex-shrink: @shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width>
+.flex-basis(@width: auto) {
+  -webkit-flex-basis: @width;
+  //-ms-flex-basis is not valid in ie10
+  -ms-flex-preferred-size: @width;
+  flex-basis: @width;
+}
+
+.flexbox-item(@val) {
+  -webkit-box-flex: @val; /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: @val; /* OLD - Firefox 19- */
+  -webkit-flex: @val; /* Chrome */
+  -ms-flex: @val; /* IE 10 */
+  flex: @val;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+.justify-content(@justify) when (@justify = flex-start) {
+  -webkit-justify-content: flex-start;
+  //-ms-justify-content is not valid in ie10
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.justify-content(@justify) when (@justify = flex-end) {
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.justify-content(@justify) when (@justify = space-between) {
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.justify-content(@justify) when (default()) {
+  -webkit-justify-content: @justify;
+  -ms-flex-pack: @justify;
+  justify-content: @justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch
+.align-content(@align) when (@align = flex-start) {
+  -webkit-align-content: flex-start;
+  //-ms-align-content is not valid in ie10
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+.align-content(@align) when (@align = flex-end) {
+  -webkit-align-content: flex-end;
+  -ms-flex-line-pack: end;
+  align-content: flex-end;
+}
+
+.align-content(@align) when (@align = space-between) {
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: justify;
+  align-content: space-between;
+}
+
+.align-content(@align) when (default()) {
+  -webkit-align-content: @align;
+  -ms-flex-line-pack: @align;
+  align-content: @align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+.align-items(@align) when (@align = flex-start) {
+  -webkit-align-items: flex-start;
+  //-ms-align-items is not valid in ie10
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.align-items(@align) when (@align = flex-end) {
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.align-items(@align) when (default()) {
+  -webkit-align-items: @align;
+  -ms-flex-align: @align;
+  align-items: @align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch
+.align-self(@align) when (@align = flex-start) {
+  -webkit-align-self: flex-start;
+  //-ms-align-self is not valid in ie10
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.align-self(@align) when (@align = flex-end) {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.align-self(@align) when (default()) {
+  -webkit-align-self: @align;
+  -ms-flex-item-align: @align;
+  align-self: @align;
+}

@@ -48,11 +48,6 @@
       margin-right: @product-item-gutter;
     }
   }
-
-  .product-item {
-    .display-flex();
-    .flex-direction(column);
-  }
 }
 
 
@@ -73,6 +68,8 @@
 }
 
 .product-item {
+  .display-flex();
+  .flex-direction(column);
   padding: 20px;
 
   .image-wrapper {

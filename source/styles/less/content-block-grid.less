@@ -1,0 +1,120 @@
+// CONTENT BLOCKS
+// - Episerver blocks 1-column and 2-column width
+// --------------------------------------------------
+
+.content-item-grid {
+  .display-flex();
+  .flex-wrap(wrap);
+  .justify-content(space-between);
+
+  // Used on anchors
+  .content-item-grid--item {
+    .display-flex(); /* Not necessary if read more doesn't need to be positioned at the bottom. Switch to display: block. */
+    .flex-direction(column); /* Not necessary if read more doesn't need to be positioned at the bottom */
+    background-color: #ccc;
+    color: #000;
+    margin-bottom: 30px;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: darken(#ccc, 10%);
+      text-decoration: none;
+    }
+
+    @media (min-width: @screen-sm) {
+      margin-right: 30px;
+      width: 30%;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @media (min-width: @screen-md) {
+      .flex(1 0 0);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .content-item-grid--image {
+      .display-flex();
+      .justify-content(flex-start);
+      .align-items(center);
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .content-item-grid--info {
+      .display-flex();
+      .flex-direction(column);
+      .flex-grow(1);
+
+      padding: 30px;
+
+      @media (min-width: @screen-md) {
+        padding: 45px 40px 50px 40px;
+      }
+
+      h3 {
+        .font-size(24);
+        margin: 0 0 20px 0;
+      }
+
+      h4 {
+        margin: 0 0 10px 0;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .read-more {
+        margin-top: auto;
+        padding-top: 30px;
+      }
+    }
+  }
+
+  .content-item-grid--item-two-column {
+
+    @media (min-width: @screen-sm) {
+      width: 65%;
+    }
+
+    @media (min-width: @screen-md) {
+      .flex(2.1 0 0);
+    }
+
+    .content-item-grid--image {
+      overflow: hidden;
+      width: 100%;
+
+      @media (min-width: @screen-md) {
+        height: 225px;
+      }
+
+      img {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+
+        @media (min-width: @screen-md) {
+          height: auto;
+        }
+      }
+    }
+
+    .content-item-grid--info {
+      h3 {
+        .font-size(32);
+      }
+    }
+  }
+}

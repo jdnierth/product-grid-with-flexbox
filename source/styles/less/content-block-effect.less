@@ -1,0 +1,31 @@
+// CONTENT BLOCKS
+// - Zooming image effect on episerver blocks
+// - Currently only used on 1 type of grid.
+// --------------------------------------------------
+
+.content-item-grid {
+  @scale-factor: 1.1;
+
+  a {
+    .content-item-grid--image img {
+      .zoom-image();
+    }
+
+    &:hover {
+      .content-item-grid--image img {
+        .transform(scale(@scale-factor));
+      }
+    }
+  }
+
+  /**
+   * Mixin for this effect only.
+   */
+  .zoom-image() {
+    .transition(all 0.2s ease-in-out);
+
+    &:hover {
+      .transform(scale(@scale-factor));
+    }
+  }
+}

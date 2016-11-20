@@ -1,0 +1,108 @@
+// PRODUCT ITEM + WRAPPER
+// - Currently used on the homepage beneath the hero banner
+// - Product item block with image + copy with background color block.
+// --------------------------------------------------
+//@product-carousel-height: 223;
+
+// supposed to be an anchor
+.product-item-wrapper-flexbox {
+  @product-item-gutter: @grid-gutter-width / 2;
+  margin: @product-item-gutter @product-item-gutter 0 0;
+  width: 46.8%;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  @media (min-width: @screen-xs) {
+    width: 47.5%;
+
+  }
+
+  @media (min-width: @screen-sm) {
+    width: 31.8%;
+
+    &:nth-child(2n) {
+      margin-right: @product-item-gutter;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: @screen-md) {
+    width: 32.2%;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: @screen-lg) {
+    .justify-content(center);
+    width: ((@container-lg - @product-item-gutter) / 6) -  @product-item-gutter + (@product-item-gutter / 6)-3;
+
+    &:nth-child(3n):not(:last-child) {
+      margin-right: @product-item-gutter;
+    }
+  }
+
+  .product-item {
+    .display-flex();
+    .flex-direction(column);
+  }
+}
+
+// Used on the homepage and product category landing page
+.product-category-list {
+  .content-item-grid--image {
+    margin-top: 20px;
+  }
+}
+
+.product-item-wrapper {
+  .font-size(18);
+  background-color: #ccc;
+  //height: unit(@product-carousel-height, px); // This will be required if this product list needs to be within a swiper carousel.
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    p {
+      color: @color-4;
+    }
+  }
+}
+
+.product-item {
+  //height: unit(@product-carousel-height, px);
+  padding: 20px;
+
+  .image-wrapper {
+    .align-self(flex-start); /* Center image in the middle */
+    height: 110px;
+    margin: 0 auto;
+    max-width: 90%;
+    text-align: center; /* In case there is no image we want the alt text to be centered */
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .product-info {
+    color: @color-4;
+    margin-top: 20px;
+    text-align: center;
+
+    p {
+      margin: 0;
+    }
+  }
+}

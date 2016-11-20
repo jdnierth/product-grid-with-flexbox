@@ -1,0 +1,12 @@
+// Font sizing using REM
+.font-size(@font-size:16){
+  @rem:(@font-size / 10);
+  font-size:~"@{rem}rem";
+}
+
+
+.transform(@string) {
+  -webkit-transform: @string;
+  -ms-transform: @string;
+  transform: @string;
+}

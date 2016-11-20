@@ -1,0 +1,26 @@
+// CONTENT BLOCK THEMES
+// - Episerver blocks 1-column and 2-column width
+// --------------------------------------------------
+.theme-cleaning {
+  .add-theme-color(@theme-cleaning);
+}
+
+.theme-cooking {
+  .add-theme-color(@theme-cooking);
+}
+
+.theme-laundry {
+  .add-theme-color(@theme-laundry);
+}
+
+.theme-lifestyle {
+  .add-theme-color(@theme-lifestyle);
+}
+
+.add-theme-color(@theme-color) {
+  a,
+  h4,
+  .read-more {
+    color: @theme-color;
+  }
+}

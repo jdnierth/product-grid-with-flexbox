@@ -1,3 +1,4 @@
 /.idea
 /source/node_modules
 /*.iml
+/source/dist

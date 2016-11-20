@@ -1,42 +1,17 @@
-// PRODUCT CATEGORIES LIST
-// - Currently used on the homepage
-// - Meant to be used in conjunction with product-item (see product-categories-item).
+// PRODUCT LIST
+// - To be used in conjunction with product-item
 // --------------------------------------------------
-
-//.product-item-list {
-//  @padding: 8px;
-//  margin-bottom: 50px;
-//
-//  .container {
-//    padding: 0 (4 * @padding);
-//  }
-//
-//  // Deviating from bootstrap grid because of design
-//  .col-xs-6,
-//  .col-sm-2 {
-//    padding: 0 @padding;
-//  }
-//}
 
 .product-item-list {
   .display-flex();
   .flex-wrap(wrap);
   margin-bottom: 20px;
-  //border: 1px solid black;
 
-  @media (min-width: @screen-sm) {
-    //border: 1px solid deeppink;
-  }
-
-  @media (min-width: @screen-md) {
-    //border: 1px solid green;
+  &:last-child {
+    margin-right: 0;
   }
 
   @media (min-width: @screen-lg) {
     .justify-content(center);
-    //border: 1px solid deepskyblue;
-  }
-  &:last-child {
-    margin-right: 0;
   }
 }

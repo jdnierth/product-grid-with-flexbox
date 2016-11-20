@@ -1,8 +1,6 @@
 // PRODUCT ITEM + WRAPPER
-// - Currently used on the homepage beneath the hero banner
-// - Product item block with image + copy with background color block.
+// - Product item block with image + copy
 // --------------------------------------------------
-//@product-carousel-height: 223;
 
 // supposed to be an anchor
 .product-item-wrapper-flexbox {
@@ -20,7 +18,6 @@
 
   @media (min-width: @screen-xs) {
     width: 47.5%;
-
   }
 
   @media (min-width: @screen-sm) {
@@ -58,29 +55,24 @@
   }
 }
 
-// Used on the homepage and product category landing page
-.product-category-list {
-  .content-item-grid--image {
-    margin-top: 20px;
-  }
-}
 
 .product-item-wrapper {
   .font-size(18);
-  background-color: #ccc;
-  //height: unit(@product-carousel-height, px); // This will be required if this product list needs to be within a swiper carousel.
+  background-color: @color-grey;
   text-align: center;
   text-decoration: none;
 
   &:hover {
+    background-color: darken(@color-grey, 10%);
+    text-decoration: none;
+
     p {
-      color: @color-4;
+      color: black;
     }
   }
 }
 
 .product-item {
-  //height: unit(@product-carousel-height, px);
   padding: 20px;
 
   .image-wrapper {
@@ -97,7 +89,6 @@
   }
 
   .product-info {
-    color: @color-4;
     margin-top: 20px;
     text-align: center;
 

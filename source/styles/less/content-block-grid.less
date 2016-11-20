@@ -1,5 +1,5 @@
-// CONTENT BLOCKS
-// - Episerver blocks 1-column and 2-column width
+// CONTENT BLOCK GRID
+// - blocks 1-column and 2-column width
 // --------------------------------------------------
 
 .content-item-grid {
@@ -11,14 +11,14 @@
   .content-item-grid--item {
     .display-flex(); /* Not necessary if read more doesn't need to be positioned at the bottom. Switch to display: block. */
     .flex-direction(column); /* Not necessary if read more doesn't need to be positioned at the bottom */
-    background-color: #ccc;
-    color: #000;
+    background-color: @color-grey;
+    color: @color-black;
     margin-bottom: 30px;
 
     &:active,
     &:focus,
     &:hover {
-      background-color: darken(#ccc, 10%);
+      background-color: darken(@color-grey, 10%);
       text-decoration: none;
     }
 
